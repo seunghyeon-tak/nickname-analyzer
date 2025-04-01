@@ -22,7 +22,7 @@ conn = pymysql.connect(
 cursor = conn.cursor()
 
 # 형용사 저장
-with open("../adjectives.csv", encoding="utf-8") as f:
+with open("../emotional_adjectives.csv", encoding="utf-8") as f:
     reader = csv.reader(f)
     next(reader)
     for row in reader:
@@ -30,7 +30,7 @@ with open("../adjectives.csv", encoding="utf-8") as f:
         cursor.execute("INSERT INTO adjectives (word) VALUES (%s)", (word,))
 
 # 명사 저장
-with open("../nouns.csv", encoding="utf-8") as f:
+with open("../emotional_nouns.csv", encoding="utf-8") as f:
     reader = csv.reader(f)
     next(reader)
     for row in reader:
